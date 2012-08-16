@@ -17,9 +17,9 @@ component {
 		var keys = md.names();
 		result.metadata = {};
 		for(var i=1; i<arrayLen(keys); i++) {
-			result.metadata[keys[i]] = md.get(keys[i]);
+			var mdval = md.get(keys[i]);
+			if(!isNull(mdval)) result.metadata[keys[i]] = mdval;
 		}
-
 		result.text = ch.toString();
 
 		return result;  
